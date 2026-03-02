@@ -15,6 +15,7 @@ vizsgálatok időpontjait és felírt gyógyszereket.
 * Töltsd fel az adatbázist adatokkal!
 * Készíts lekérdezéseket az adatbázis tesztelése céljából!
 * Dokumentáld a munkádat a weben!
+
 ### Adatok
 
 #### PÁCIENS
@@ -73,13 +74,13 @@ vizsgálatok időpontjait és felírt gyógyszereket.
 
 #### MIRE_ÉRZÉKENY
 
-| Pid         | Gynév     |
-|-------------|-----------|
-| 17402213339 | –         |
-| 17303313254 | –         |
-| 25602143598 | –         |
-| 26511123265 | Diflucan  |
-| 14404013214 | –         |
+| Pid         | Gynév        |
+|-------------|--------------|
+| 17402213339 | –            |
+| 17303313254 | –            |
+| 25602143598 | –            |
+| 26511123265 | Diflucan     |
+| 14404013214 | –            |
 | 26511123265 | Calciphedrin |
 
 #### DIAGNÓZIS
