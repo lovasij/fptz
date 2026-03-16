@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Orvosi betegnyilvántartás - dokumentálás</title>
 </head>
 
 <body>
     <header>
-        <a href="#relacios">Relációs-modell</a> <a href="#er">ER-modell</a> <a href="#letrehoz">Adatbázis
-            létrehozása</a> <a href="#feltolt">Adatbázis feltöltése</a>
+        <a href="index.html">MODELLEK</a> <a href="code.html">KÓD</a>
+        <div class="dropdown">menu
+            <div class="dropdown-content"><a href="index.html">Modellek</a><br><a href="code.html">Kód</a></div>
+          </div>
     </header>
     <h3>Adatbázis létrehozása</h3>
     <h4>Páciens</h4>
@@ -64,51 +67,5 @@
     <div id="feltolt"></div><br>
     <h3>Adatbázis feltöltése</h3>
 </body>
-<style>
-    /*
-    Szinek
-    #75b0b2
-    #90bdbf
-    #acc6c7
-    #c3d3d4
-*/
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    header {
-        position: sticky;
-        top: 0;
-        background: white;
-        padding: 20px;
-        border-bottom: 1px solid #ccc;
-        background-color: cadetblue;
-    }
-
-    a {
-        color: white;
-    }
-
-    .code-input {
-        width: 50%;
-        height: auto;
-        background: #1e1e1e;
-        color: #dcdcdc;
-        font-family: "Courier New", monospace;
-        font-size: 14px;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #444;
-        outline: none;
-        resize: vertical;
-    }
-
-    .code-input:focus {
-        border-color: #4cafef;
-        box-shadow: 0 0 5px #4cafef55;
-    }
-</style>
 
 </html>
