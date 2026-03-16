@@ -1,0 +1,44 @@
+/*
+    Szinek
+    #75b0b2
+    #90bdbf
+    #acc6c7
+    #c3d3d4
+*/
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: cadetblue;
+}
+
+a {
+    color: white;
+}
+
+.code-input {
+    width: 50%;
+    height: auto;
+    background: #1e1e1e;
+    color: #dcdcdc;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    outline: none;
+    resize: vertical;
+}
+
+.code-input:focus {
+    border-color: #4cafef;
+    box-shadow: 0 0 5px #4cafef55;
+}
