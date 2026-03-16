@@ -1,0 +1,19 @@
+1. Tégláson lakó páciensek
+
+2. Vizsgálatok és a páciensek neve
+
+3. Páciensek és az allergiájuk
+
+4. Páciensek és betegségeik
+
+5. Mely páciensek kaptak diagnózist
+
+6. Pneumoniás páciensek
+
+7. Kik allergiásak valamely gyógyszerre
+
+8. Mely pácienseknek volt vizsgálata 1996.02.11-én
+
+9. Páciensek és diagnózis dátuma
+
+10. Azok a páciensek, akik grippe betegséget kaptak
