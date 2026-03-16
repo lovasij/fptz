@@ -8,22 +8,46 @@
 </head>
 
 <body>
+    <header>
+        <a href="#relacios">Relációs-modell</a> <a href="#er">ER-modell</a> <a href="#letrehoz">Adatbázis létrehozása</a> <a href="#feltolt">Adatbázis feltöltése</a>
+    </header>
     <h1>Orvosi betegnyilvántartás - dokumentálás</h1>
-    <h3>Relációs-modell</h3>
+    <h3 id="relacios">Relációs-modell</h3>
 
-    <h3>ER-modell</h3>
+    <h3 id="er">ER-modell</h3>
     <img src="ermodell.png" alt="ER-modell">
 
     <h4>Ellenőrzés</h4>
     <img src="er-modell-ell.png" alt="ER-modell Ellenőrzés">
-    <h3>Adatbázis létrehozása</h3>
+    <h3 id="letrehoz">Adatbázis létrehozása</h3>
 
-    <h3>Adatbázis feltöltése</h3>
+    <h3 id="feltolt">Adatbázis feltöltése</h3>
 </body>
 <style>
+/*
+    Szinek
+    #75b0b2
+    #90bdbf
+    #acc6c7
+    #c3d3d4
+*/
+
     img {
         width: 100%;
         height: auto;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        background: white;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        background-color: cadetblue;
+    }
+
+    a{
+        color: white;
     }
 </style>
 
