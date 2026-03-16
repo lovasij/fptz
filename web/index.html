@@ -9,7 +9,8 @@
 
 <body>
     <header>
-        <a href="#relacios">Relációs-modell</a> <a href="#er">ER-modell</a> <a href="#letrehoz">Adatbázis létrehozása</a> <a href="#feltolt">Adatbázis feltöltése</a>
+        <a href="#relacios">Relációs-modell</a> <a href="#er">ER-modell</a> <a href="#letrehoz">Adatbázis
+            létrehozása</a> <a href="#feltolt">Adatbázis feltöltése</a>
     </header>
     <h1>Orvosi betegnyilvántartás - dokumentálás</h1>
 
@@ -28,17 +29,12 @@
     <div id="letrehoz"></div><br>
     <h3>Adatbázis létrehozása</h3>
     <h4>Páciens</h4>
-    <div>CREATE TABLE 212e_orvos.paciens (
-        pid CHAR(11) PRIMARY KEY,
-        nev VARCHAR(50),
-        cim VARCHAR(100),
-        telefon VARCHAR(15)
-        )</p>
+    <div class="code-input">dafs</div>
     <div id="feltolt"></div><br>
     <h3>Adatbázis feltöltése</h3>
 </body>
 <style>
-/*
+    /*
     Szinek
     #75b0b2
     #90bdbf
@@ -60,8 +56,27 @@
         background-color: cadetblue;
     }
 
-    a{
+    a {
         color: white;
+    }
+
+    .code-input {
+        width: 50%;
+        height: auto;
+        background: #1e1e1e;
+        color: #dcdcdc;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        outline: none;
+        resize: vertical;
+    }
+
+    .code-input:focus {
+        border-color: #4cafef;
+        box-shadow: 0 0 5px #4cafef55;
     }
 </style>
 
