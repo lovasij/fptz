@@ -11,10 +11,11 @@
 <body>
     <header>
         <div>
-        <div class="dropdown"><img src="img/menu icon.png" id="menu">
-            <div class="dropdown-content"><a href="index.html">Modellek</a><br><a href="code.html">Kód</a></div>
+            <div class="dropdown"><img src="img/menu icon.png" id="menu">
+                <div class="dropdown-content"><a href="index.html">Modellek</a><br><a href="code.html">Kód</a></div>
+            </div>
+            <h1 id="cim">Orvosi betegnyilvántartás - Kód</h1>
         </div>
-        <h1 id="cim">Orvosi betegnyilvántartás - Kód</h1></div>
     </header>
     <h3>Adatbázis létrehozása</h3>
     <h4>Páciens</h4>
@@ -77,36 +78,44 @@
         ('Ceclor'), <br>
         ('Diflucan'), <br>
         ('Calciphedrin');</div>
-        <h4>Betegség</h4>
-        <div class="code-input">INSERT INTO 212e_orvos.betegseg (Bnev) VALUES <br>
-            ('grippe'), <br>
-            ('hepatitis'), <br>
-            ('encefaritis'), <br>
-            ('encephalomylitis'), <br>
-            ('pneumonia'), <br>
-            ('bronchitis');</div>
-            <h4>Mit kap</h4>
-        <div class="code-input">INSERT INTO 212e_orvos.MIT_KAP (Bnev, Gynev) VALUES <br>
-            ('grippe', 'Semicilin'), <br>
-            ('hepatitis', 'Prednisolon'), <br>
-            ('encefaritis', 'Medrol'), <br>
-            ('encephalomylitis', 'Metyl-pred'), <br>
-            ('pneumonia', 'Ceclor'), <br>
-            ('bronchitis', 'Calciphedrin'); </div>
-            <h4>Páciens</h4>
-            <div class="code-input">INSERT INTO 212e_orvos.PACIENS (Pid, nev, cim, telefon) VALUES <br>
-                (17402213339, 'Kovács Krisztián', 'Hajdúhadház, Szűk u. 1.', '(66) 329-896'), <br>
-                (17303313254, 'Andrészki Dezső', 'Téglás, Kossuth utca 125.', '(52) 421-643'), <br>
-                (25602143598, 'Kajár Miklósné', 'Téglás, Petőfi út 12.', '(52) 342-453'), <br>
-                (26511123265, 'Kocsis Béláné', 'Téglás, Március 15. utca 3.', '(52) 384-345'), <br>
-                (14404013214, 'Rézbányai Ernő', 'Hajdúhadház, Bocskai út 35.', '(66) 325-643');</div>
-                <h4>Mit kap</h4>
-                <div class="code-input">INSERT INTO 212e_orvos.VIZSGALAT (Vid, Pid, Datum) VALUES <br>
-                    (1, 17402213339, '1996-02-11'), <br>
-                    (2, 17303313254, '1996-02-11'), <br>
-                    (3, 25602143598, '1996-02-11'), <br>
-                    (4, 26511123265, '1996-02-11'), <br>
-                    (5, 14404013214, '1996-02-11'); </div>
+    <h4>Betegség</h4>
+    <div class="code-input">INSERT INTO 212e_orvos.betegseg (Bnev) VALUES <br>
+        ('grippe'), <br>
+        ('hepatitis'), <br>
+        ('encefaritis'), <br>
+        ('encephalomylitis'), <br>
+        ('pneumonia'), <br>
+        ('bronchitis');</div>
+    <h4>Mit kap</h4>
+    <div class="code-input">INSERT INTO 212e_orvos.MIT_KAP (Bnev, Gynev) VALUES <br>
+        ('grippe', 'Semicilin'), <br>
+        ('hepatitis', 'Prednisolon'), <br>
+        ('encefaritis', 'Medrol'), <br>
+        ('encephalomylitis', 'Metyl-pred'), <br>
+        ('pneumonia', 'Ceclor'), <br>
+        ('bronchitis', 'Calciphedrin'); </div>
+    <h4>Páciens</h4>
+    <div class="code-input">INSERT INTO 212e_orvos.PACIENS (Pid, nev, cim, telefon) VALUES <br>
+        (17402213339, 'Kovács Krisztián', 'Hajdúhadház, Szűk u. 1.', '(66) 329-896'), <br>
+        (17303313254, 'Andrészki Dezső', 'Téglás, Kossuth utca 125.', '(52) 421-643'), <br>
+        (25602143598, 'Kajár Miklósné', 'Téglás, Petőfi út 12.', '(52) 342-453'), <br>
+        (26511123265, 'Kocsis Béláné', 'Téglás, Március 15. utca 3.', '(52) 384-345'), <br>
+        (14404013214, 'Rézbányai Ernő', 'Hajdúhadház, Bocskai út 35.', '(66) 325-643');</div>
+    <h4>Vizsgálat</h4>
+    <div class="code-input">INSERT INTO 212e_orvos.VIZSGALAT (Vid, Pid, Datum) VALUES <br>
+        (1, 17402213339, '1996-02-11'), <br>
+        (2, 17303313254, '1996-02-11'), <br>
+        (3, 25602143598, '1996-02-11'), <br>
+        (4, 26511123265, '1996-02-11'), <br>
+        (5, 14404013214, '1996-02-11'); </div>
+    <h4>Diagnózis</h4>
+    <div class="code-input">INSERT INTO 212e_orvos.DIAGNOZIS (Vid, Datum, Bnev) VALUES
+        (1, '1996-02-11', 'encefaritis'),
+        (1, '1996-02-11', 'encephalomylitis'),
+        (2, '1996-02-11', 'grippe'),
+        (3, '1996-02-11', 'hepatitis'),
+        (4, '1996-02-11', 'pneumonia'),
+        (5, '1996-02-11', 'grippe'); </div>
 </body>
 
 </html>
