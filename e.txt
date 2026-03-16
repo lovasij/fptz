@@ -21,10 +21,11 @@ FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid)
 )
 
 CREATE TABLE 212e_orvos.mit_kap (
-bnev VARCHAR(50) PRIMARY KEY,
-gynev VARCHAR(50),
-FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev),
-FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)
+    bnev VARCHAR(50),
+    gynev VARCHAR(50),
+    PRIMARY KEY (bnev, gynev),
+    FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev),
+    FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)
 )
 
 CREATE TABLE 212e_orvos.gyogyszer (
