@@ -16,9 +16,10 @@ FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev)
 )
 
 CREATE TABLE 212e_orvos.vizsgalat (
-vid INT PRIMARY KEY AUTO_INCREMENT,
+vid INT AUTO_INCREMENT,
 pid CHAR(11),
 datum DATE,
+PRIMARY KEY(vid, pid, datum),
 FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid)
 )
 
