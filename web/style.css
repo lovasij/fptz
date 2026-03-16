@@ -14,6 +14,11 @@ img {
     width: 80px;
     height: auto;
 }
+#cim{
+    text-align: center;
+    color: white;
+}
+
 
 header {
     position: sticky;
@@ -49,6 +54,7 @@ a {
 
 .dropdown {
     position: relative;
+    float: left;
   }
   
   .dropdown-content {
