@@ -33,10 +33,26 @@ JOIN 212e_orvos.DIAGNOZIS D ON V.Vid = D.Vid
 WHERE D.Bnev = 'pneumonia';
 
 7. Kik allergiásak valamely gyógyszerre
-
+SELECT P.nev, M.Gynev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.MIRE_ERZEKENY M ON P.Pid = M.Pid
+WHERE M.Gynev <> '-';
 
 8. Mely pácienseknek volt vizsgálata 1996.02.11-én
+SELECT P.nev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.VIZSGALAT V ON P.Pid = V.Pid
+WHERE V.datum = '1996.02.11';
 
 9. Páciensek és diagnózis dátuma
+SELECT P.nev, D.datum, D.Bnev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.VIZSGALAT V ON P.Pid = V.Pid
+JOIN 212e_orvos.DIAGNOZIS D ON V.Vid = D.Vid;
 
 10. Azok a páciensek, akik grippe betegséget kaptak
+SELECT P.nev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.VIZSGALAT V ON P.Pid = V.Pid
+JOIN 212e_orvos.DIAGNOZIS D ON V.Vid = D.Vid
+WHERE D.Bnev = 'grippe';
