@@ -17,19 +17,65 @@
     <div id="relacios"></div><br>
 
     <h3>Relációs-modell</h3>
-    <img src="relacios.png" alt="relacios-modell">
+    <img src="img/relacios.png" alt="relacios-modell">
 
     <div id="er"></div><br>
     <h3>ER-modell</h3>
-    <img src="ermodell.png" alt="ER-modell">
+    <img src="img/ermodell.png" alt="ER-modell">
 
     <h4>Ellenőrzés</h4>
-    <img src="er-modell-ell.png" alt="ER-modell Ellenőrzés">
+    <img src="img/er-modell-ell.png" alt="ER-modell Ellenőrzés">
 
     <div id="letrehoz"></div><br>
     <h3>Adatbázis létrehozása</h3>
     <h4>Páciens</h4>
-    <div class="code-input">dafs</div>
+    <div class="code-input">CREATE TABLE 212e_orvos.paciens (<br>
+        pid CHAR(11) PRIMARY KEY,<br>
+        nev VARCHAR(50),<br>
+        cim VARCHAR(100),<br>
+        telefon VARCHAR(15) <br>
+        );</div>
+    <h4>Betegseg</h4>
+    <div class="code-input">CREATE TABLE 212e_orvos.betegseg (<br>
+        bnev VARCHAR(50) PRIMARY KEY <br>
+        );</div>
+    <h4>Gyógyszer</h4>
+    <div class="code-input">CREATE TABLE 212e_orvos.gyogyszer ( <br>
+        gynev VARCHAR(50) PRIMARY KEY <br>
+        );</div>
+        <h4>Mit kap</h4>
+        <div class="code-input">CREATE TABLE 212e_orvos.mit_kap ( <br>
+            bnev VARCHAR(50),<br>
+            gynev VARCHAR(50),<br>
+            PRIMARY KEY (bnev, gynev),<br>
+            FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev),<br>
+            FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)<br>
+        );</div>
+        <h4>Vizsgálat</h4>
+        <div class="code-input">CREATE TABLE 212e_orvos.vizsgalat ( <br>
+            vid INT AUTO_INCREMENT, <br>
+            pid CHAR(11), <br>
+            datum DATE, <br>
+            PRIMARY KEY(vid, pid, datum), <br>
+            FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid) <br>
+            );</div>
+            <h4>Mire érzékeny</h4>
+        <div class="code-input">CREATE TABLE 212e_orvos.mire_erzekeny (<br>
+            pid CHAR(11),<br>
+            gynev VARCHAR(50),<br>
+            PRIMARY KEY(pid, gynev),<br>
+            FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid),<br>
+            FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev)<br>
+            );</div>
+            <h4>Diagnózis</h4>
+        <div class="code-input">CREATE TABLE 212e_orvos.diagnozis ( <br>
+            id INT AUTO_INCREMENT PRIMARY KEY, <br>
+            vid INT, <br>
+            datum DATE, <br>
+            bnev VARCHAR(50), <br>
+            FOREIGN KEY (vid) REFERENCES 212e_orvos.vizsgalat (vid), <br>
+            FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev) <br>
+            )</div>
     <div id="feltolt"></div><br>
     <h3>Adatbázis feltöltése</h3>
 </body>
