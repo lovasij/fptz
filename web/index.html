@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Orvosi betegnyilvántartás - dokumentálás</title>
 </head>
 
@@ -25,105 +26,5 @@
 
     <h4>Ellenőrzés</h4>
     <img src="img/er-modell-ell.png" alt="ER-modell Ellenőrzés">
-
-    <div id="letrehoz"></div><br>
-    <h3>Adatbázis létrehozása</h3>
-    <h4>Páciens</h4>
-    <div class="code-input">CREATE TABLE 212e_orvos.paciens (<br>
-        pid CHAR(11) PRIMARY KEY,<br>
-        nev VARCHAR(50),<br>
-        cim VARCHAR(100),<br>
-        telefon VARCHAR(15) <br>
-        );</div>
-    <h4>Betegseg</h4>
-    <div class="code-input">CREATE TABLE 212e_orvos.betegseg (<br>
-        bnev VARCHAR(50) PRIMARY KEY <br>
-        );</div>
-    <h4>Gyógyszer</h4>
-    <div class="code-input">CREATE TABLE 212e_orvos.gyogyszer ( <br>
-        gynev VARCHAR(50) PRIMARY KEY <br>
-        );</div>
-        <h4>Mit kap</h4>
-        <div class="code-input">CREATE TABLE 212e_orvos.mit_kap ( <br>
-            bnev VARCHAR(50),<br>
-            gynev VARCHAR(50),<br>
-            PRIMARY KEY (bnev, gynev),<br>
-            FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev),<br>
-            FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)<br>
-        );</div>
-        <h4>Vizsgálat</h4>
-        <div class="code-input">CREATE TABLE 212e_orvos.vizsgalat ( <br>
-            vid INT AUTO_INCREMENT, <br>
-            pid CHAR(11), <br>
-            datum DATE, <br>
-            PRIMARY KEY(vid, pid, datum), <br>
-            FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid) <br>
-            );</div>
-            <h4>Mire érzékeny</h4>
-        <div class="code-input">CREATE TABLE 212e_orvos.mire_erzekeny (<br>
-            pid CHAR(11),<br>
-            gynev VARCHAR(50),<br>
-            PRIMARY KEY(pid, gynev),<br>
-            FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid),<br>
-            FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev)<br>
-            );</div>
-            <h4>Diagnózis</h4>
-        <div class="code-input">CREATE TABLE 212e_orvos.diagnozis ( <br>
-            id INT AUTO_INCREMENT PRIMARY KEY, <br>
-            vid INT, <br>
-            datum DATE, <br>
-            bnev VARCHAR(50), <br>
-            FOREIGN KEY (vid) REFERENCES 212e_orvos.vizsgalat (vid), <br>
-            FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev) <br>
-            )</div>
-    <div id="feltolt"></div><br>
-    <h3>Adatbázis feltöltése</h3>
 </body>
-<style>
-    /*
-    Szinek
-    #75b0b2
-    #90bdbf
-    #acc6c7
-    #c3d3d4
-*/
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    header {
-        position: sticky;
-        top: 0;
-        background: white;
-        padding: 20px;
-        border-bottom: 1px solid #ccc;
-        background-color: cadetblue;
-    }
-
-    a {
-        color: white;
-    }
-
-    .code-input {
-        width: 50%;
-        height: auto;
-        background: #1e1e1e;
-        color: #dcdcdc;
-        font-family: "Courier New", monospace;
-        font-size: 14px;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #444;
-        outline: none;
-        resize: vertical;
-    }
-
-    .code-input:focus {
-        border-color: #4cafef;
-        box-shadow: 0 0 5px #4cafef55;
-    }
-</style>
-
 </html>
