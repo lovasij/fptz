@@ -4,7 +4,6 @@ vid INT,
 datum DATE,
 bnev VARCHAR(50),
 FOREIGN KEY (vid) REFERENCES 212e_orvos.vizsgalat (vid),
-FOREIGN KEY (datum) REFERENCES 212e_orvos.vizsgalat (datum),
 FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)
 )
 
