@@ -8,11 +8,13 @@ FOREIGN KEY (bnev) REFERENCES 212e_orvos.betegseg (bnev)
 )
 
 CREATE TABLE 212e_orvos.mire_erzekeny (
-pid CHAR(11) PRIMARY KEY,
+pid CHAR(11),
 gynev VARCHAR(50),
+PRIMARY KEY(pid, gynev),
 FOREIGN KEY (pid) REFERENCES 212e_orvos.paciens (pid),
 FOREIGN KEY (gynev) REFERENCES 212e_orvos.gyogyszer (gynev)
 )
+
 CREATE TABLE 212e_orvos.vizsgalat (
 vid INT PRIMARY KEY AUTO_INCREMENT,
 pid CHAR(11),

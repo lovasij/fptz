@@ -1,16 +1,39 @@
 1. Tégláson lakó páciensek
+SELECT *
+FROM 212e_orvos.PACIENS
+WHERE cim LIKE 'Téglás%';
 
 2. Vizsgálatok és a páciensek neve
+SELECT V.Vid, P.nev, V.datum
+FROM 212e_orvos.VIZSGALAT V
+JOIN 212e_orvos.PACIENS P ON V.Pid = P.Pid;
 
 3. Páciensek és az allergiájuk
+SELECT P.nev, M.Gynev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.MIRE_ERZEKENY M ON P.Pid = M.Pid;
 
 4. Páciensek és betegségeik
+SELECT P.nev, D.Bnev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.VIZSGALAT V ON P.Pid = V.Pid
+JOIN 212e_orvos.DIAGNOZIS D ON V.Vid = D.Vid;
 
-5. Mely páciensek kaptak diagnózist
+5. Azok a páciensek, akik nem érzékenyek gyógyszerre
+SELECT P.nev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.MIRE_ERZEKENY M ON P.Pid = M.Pid
+WHERE M.Gynev = '-';
 
 6. Pneumoniás páciensek
+SELECT P.nev
+FROM 212e_orvos.PACIENS P
+JOIN 212e_orvos.VIZSGALAT V ON P.Pid = V.Pid
+JOIN 212e_orvos.DIAGNOZIS D ON V.Vid = D.Vid
+WHERE D.Bnev = 'pneumonia';
 
 7. Kik allergiásak valamely gyógyszerre
+
 
 8. Mely pácienseknek volt vizsgálata 1996.02.11-én
 
